@@ -1,0 +1,54 @@
+
+{% load static %}
+
+
+<html lang="en">
+
+<head>
+<title>Foodjet </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'home/hm/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link href="{% static 'home/hm/layout/styles/back.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+        <!-- ################################################################################################ -->
+        <h1><a href="/"> Foodjet </a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+
+      <nav id="mainav" class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li class="active"><a href="/">Home</a></li>
+            <li><a class="active" href="#footer" data-scroll-to="#footer">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li style="color:yellow;"> hai {{user.username}}</li>
+            <li><a class="active" href="{% url 'cartDetails' %}"><i class='fas fa-shopping-cart' style='font-size:14; color:white'></i>{{its}}</a></li>
+            <li><a class="active" href="{% url 'log_out' %}">Logout</a></li>
+            {% else %}
+            <li><a class="active" href="{% url 'reg' %}">Register</a></li>
+            <li><a class="active" href="{% url 'log_in' %}">Login</a></li>
+          {% endif %}
+
+
+        </ul>
+
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+  </div>
+</div>
+
+
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
+

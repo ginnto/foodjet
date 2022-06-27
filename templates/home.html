@@ -1,0 +1,350 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<html lang="">
+
+<head>
+
+<title>Foodjet </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'home/hm/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--  <link href="{% static 'home/hm/layout/styles/back.css' %}" rel="stylesheet" type="text/css" media="all">-->
+  <style>
+
+  .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-left: 56px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+    .img{
+
+    object-fit: contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+
+<!--&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+
+    footer{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+
+    padding-top: 40px;
+    color: #fff;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: times-new-roman;
+}
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+
+    border-radius: 50%;
+
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+
+
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px;
+padding-bottom: 40px;
+    text-align: center;
+}
+.footer-bottom p{
+float: center;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom p a{
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.footer-menu{
+  float: right;
+
+}
+.footer-menu ul{
+  display: flex;
+}
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+.footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+}
+.footer-menu ul li a:hover{
+  color: #27bcda;
+}
+
+@media (max-width:500px) {
+.footer-menu ul{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+}
+
+  </style>
+
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="img" style="background-image:url({% static 'home/hm/images/demo/backgrounds/new.jpg' %});"  >
+  <!-- ################################################################################################ -->
+
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+    <div class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+
+          <li id="searchform">
+            <div>
+              <form action="{% url 'search' %}" method="get">   <!-- not urls - url -->
+                <fieldset>
+                  <legend>Quick Search:</legend>
+                  <input type="text" placeholder="Enter search item" name="q">
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </fieldset>
+              </form>
+            </div>
+          </li>
+        </ul>
+          </div>
+  </div>
+        <!-- ################################################################################################ -->
+      </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Filter</button>
+  <div class="dropdown-content">
+
+  <a href="/">all</a>
+        {% for i in ct %}
+  <a href={{i.get_url}}>{{i.name}}</a>
+        {% endfor %}<br>
+  </div>
+</div>
+
+
+  <div id="pageintro" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading">BEST FOOD ITEMS</h3>
+
+      <p>WE PROVIDE BEST QUALITY FOOD ITEMS IN THE WORLD</p>
+      <footer>
+        <ul class="nospace inline pushright">
+          <li><a class="btn" href="{% url 'log_in' %}">LOG IN</a></li>
+          <li><a class="btn inverse" href="{% url 'reg' %}">JOIN IN</a></li>
+        </ul>
+      </footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+
+
+<!--    <div class="category">-->
+<!--      {% for i in ct %}-->
+<!--      <b style="color:white">-->
+<!--       <a href={{i.get_url}}>{{i.name}}</a><br>-->
+<!--      </b>-->
+<!--      {% endfor %}<br>-->
+<!--    </div>-->
+<!-- End Top Background Image Wrapper -->
+
+
+<div class="wrapper row3">
+  <main class="hoc container clear">
+
+
+
+    <section id="introblocks">
+      <ul class="nospace group btmspace-80">
+
+{% for i in pr.object_list %}
+        <li class="one_third">
+          <figure><a class="imgover" href="{{i.get_urls}}"> <img src="{{i.img.url}}" alt="" style="height:250;width:600;"></a>
+            <figcaption>
+              <h6 class="heading">{{i.name}}</h6>
+              <p>{{i.desc|truncatewords:15}}</p>
+              <br>
+              <p>price: {{i.price}}</p>
+              <br>
+              <p>stock left: {{i.stock}} </p><br>
+            </figcaption>
+          </figure>
+        </li>
+{% endfor %}
+
+      </ul>
+    </section>
+
+<center>
+  {% for i in pr.paginator.page_range %}
+  <a href="?page={{i}}" class="btn btn-lihgt btn-sm{% if pr.number == i%} active {% endif %}">{{i}}</a>
+
+  {% endfor %}
+</center>
+
+    <!-- ################################################################################################ -->
+    <hr class="btmspace-80">
+    <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!--      <div class="col-lg-8">-->
+<!--                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.98558443624!2d76.5769014142786!3d9.422666485294553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0625b397c1bb8f%3A0xae0bd75b595fbbeb!2sAMAN%20college%20of%20science%20%26%20technology!5e0!3m2!1sen!2sin!4v1582541762792!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>-->
+<!--                    </div>-->
+
+  <footer>
+        <div  class="footer" id="footer">
+            <h3>FOODJET</h3>
+            <p>We Provides Best Food And Jet Fast Delivery In All Locations.<br>For More Details<BR>
+            Contact Us:</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>All copyright <script>document.write(new Date().getFullYear());</script> &copy; <a href="/">FOODJET</a>  </p>
+                    <div class="footer-menu">
+                    </div>
+        </div>
+
+<!--<div class="col text-center">-->
+<!--Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="index.html" target="_blank">foodjet</a>-->
+<!--</div>-->
+
+
+    </footer>
+
+
+
+<a id="backtotop" href="#introblocks"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'hm/layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>
+
+{% endblock %}
