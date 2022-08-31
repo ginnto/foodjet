@@ -5,9 +5,9 @@ Implemented all necessary e-commerce functionalities like product listing, cart 
 Technology Used: Python-Django, HTML, CSS, JavaScript.
 
 # WORKING 
-## first you have to register,
-## then you have to login else you dont able to add product to cart. 
-## other wise you can only see all the products and price.
+###### first you have to register,
+###### then you have to login else you dont able to add product to cart. 
+###### other wise you can only see all the products and price.
 
 ![hpmepage](https://user-images.githubusercontent.com/92264484/185748981-9d9217a7-6f21-4c61-956c-13ed35996466.JPG)
 ![product1](https://user-images.githubusercontent.com/92264484/185749024-4ebf6513-9a9c-4095-b127-d8276bb63048.JPG)
