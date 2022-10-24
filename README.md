@@ -3,6 +3,8 @@ Online Food Aggregator:
 Website for online food delivery.
 Implemented all necessary e-commerce functionalities like product listing, cart etc.
 Technology Used: Python-Django, HTML, CSS, JavaScript.
+## Live Demo
+http://foodjetin.pythonanywhere.com/
 
 # WORKING 
 ###### first you have to register,
