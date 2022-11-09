@@ -4,6 +4,7 @@ Website for online food delivery.
 Implemented all necessary e-commerce functionalities like product listing, cart etc.
 Technology Used: Python-Django, HTML, CSS, JavaScript.
 ## Live Demo
+
 http://foodjetin.pythonanywhere.com/
 
 # WORKING 
@@ -37,4 +38,5 @@ source env/bin/activate
 `python manage.py migrate`
 
 `python manage.py runserver`
+
 
