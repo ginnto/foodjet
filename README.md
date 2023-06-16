@@ -1,4 +1,4 @@
-# FOODJET
+# FOODJET.
 Online Food Aggregator: 
 Website for online food delivery.
 Implemented all necessary e-commerce functionalities like product listing, cart etc.
